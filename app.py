@@ -1,7 +1,7 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
-load_dotenv()
+# Streamlit Cloud automatically loads st.secrets
+# No dotenv needed!
 
 import tempfile
 from io import BytesIO
