@@ -3,6 +3,10 @@ import os
 import tempfile
 from io import BytesIO
 from docx import Document
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from citation_processor import CitationProcessor
