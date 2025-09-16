@@ -2,7 +2,9 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 load_dotenv()
-AZURE_OPENAI_API_KEY = st.secrets.get("AZURE_OPENAI_API_KEY", os.getenv("AZURE_OPENAI_API_KEY"))
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+if hasattr(st, "secrets") and "AZURE_OPENAI_API_KEY" in st.secrets:
+    AZURE_OPENAI_API_KEY = st.secrets["AZURE_OPENAI_API_KEY"]
 import tempfile
 from io import BytesIO
 from docx import Document
